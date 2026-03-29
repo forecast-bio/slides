@@ -289,17 +289,17 @@ for sample in ds.shuffled() {
 <section>
   <h1>The full picture</h1><h2>The protocol is the force multiplier</h2>
   <div class="sp-sm"></div>
-  <div style="display:flex;justify-content:center"><div class="da" id="vis-ecosystem"></div></div>
+  <div class="da" id="vis-ecosystem" style="width:100%"></div>
 </section>
 
 <section class="closing-slide">
-  <div class="bv" style="top:50%;left:30%;transform:translateY(-20%)" id="vis-closing"></div>
+  <div class="bv" style="bottom:28%;left:22%" id="vis-closing"></div>
   <h1>Cognitive agency<br>at scale</h1>
   <div class="sp-sm"></div>
   <p>The tools that shape thought are consolidating faster<br>than at any point in history.</p>
   <p>We maintain our agency by building infrastructure<br>that lets us act together.</p>
   <div class="sp-sm"></div>
-  <p>That's not idealism. That's engineering.</p>
+  <p>Protocols, not labs.</p>
   <div class="sp"></div>
   <p style="font-size:0.82em;color:var(--muted)">We're hiring.</p>
   <p class="contact-bar">maxine@forecast.bio</p>
@@ -450,7 +450,7 @@ function genAppview(){
 
 // ── ECOSYSTEM ──
 function genEco(){
-  var w=650,h=200,s='';
+  var w=560,h=200,s='';
   seed=55;
   function multi(cx,cy,n,r,c){
     var o='';
@@ -508,17 +508,17 @@ function genSocial(){
   return svgF(w,h,s);
 }
 
-// ── CLOSING: same dots motif as title ──
+// ── CLOSING: dots sweep bottom-left → upper-right ──
 function genClosing(){
-  var w=700,h=300,s='';seed=123;
+  var w=600,h=400,s='';seed=123;
   var acc=[C.blue,C.yellow,C.red,C.pink,C.blue,C.yellow,C.pink,C.red];
-  for(var i=0;i<22;i++){
-    var t=i/21;
-    var bx=t*600;
-    var by=150+(R()-0.5)*40;
-    var spread=10+t*t*300;
-    var cx=Math.round(bx+(R()-0.5)*spread*0.6);
-    var cy=Math.round(by+(R()-0.5)*spread);
+  for(var i=0;i<24;i++){
+    var t=i/23;
+    var bx=20+t*540;
+    var by=380-t*370;
+    var spread=20+t*t*280;
+    var cx=Math.round(bx+(R()-0.5)*spread*0.5);
+    var cy=Math.round(by+(R()-0.5)*spread*0.7);
     if(R()<0.35){s+=ci(cx,cy,12,'#DDD5D7');}
     else{s+=ci(cx,cy,12,acc[Math.floor(R()*acc.length)]);}
   }
